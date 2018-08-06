@@ -10,21 +10,13 @@ if($method == 'POST')
 	
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-	$text = $json->queryResult->parameters->text;
-	$text=strtoupper($text);
+	//$text = $json->queryResult->parameters->text;
+	//$text=strtoupper($text);
+	$com = $json->queryResult->parameters->command;
+	$com = strtolower($com);
 	
 	
-	if ($text=='HANA')
-	{
-		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-		
-	}
-	else if($text == 'MySQL')
-	{
-		
-		$speech="MySQL is an open-source relational database management system (RDBMS).";
-	}
-	else if($text == 'DATABASE')
+	if($com == 'database')
 	{
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
@@ -42,21 +34,11 @@ if($method == 'POST')
 		$database=  $someArray[0]["DATABASE_NAME"];
 		$speech = " Database name is $database" ;
 	}
-	
-	/*else
-	{
-		$speech = "Input something else";
-	}*/
-		
-		$com = $json->queryResult->parameters->command;
-		$com = strtolower($com);
-		
-		
-		
-	
-	if ($com == 'locality')
+	else if ($com == 'howmany')
 	{
 		$room = $json->queryResult->parameters->rooms;
+		$area_num = $json->queryResult->parameters->area_num;
+		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&getRooms=$room";
