@@ -41,7 +41,7 @@ if($method == 'POST')
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=localityt&getRooms=$room";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=locality&getRooms=$room";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
