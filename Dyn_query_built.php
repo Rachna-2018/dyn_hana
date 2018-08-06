@@ -107,7 +107,7 @@ if($method == 'POST')
 			
        		 }	
 	}
-	else if ($com == 'metro')
+	else if ($com == 'getCount')
 	{
 		$room = $json->queryResult->parameters->rooms;
 		$year = $json->queryResult->parameters->year;
