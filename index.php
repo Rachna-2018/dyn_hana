@@ -34,7 +34,7 @@ if($method == 'POST')
 		$database=  $someArray[0]["DATABASE_NAME"];
 		$speech = " Database name is $database" ;
 	}
-	else if ($com == 'howmany')
+	else if ($com == 'which')
 	{
 		$room = $json->queryResult->parameters->rooms;
 		$area_num = $json->queryResult->parameters->area_num;
