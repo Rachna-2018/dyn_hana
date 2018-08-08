@@ -23,17 +23,7 @@ if($method == 'POST')
 	$HIGHSAL="";*/
 	
 	
-	if (empty($ENT_ROOM)){$ENT_ROOM=0;}
-	if(empty($ENT_LOC)) {$ENT_LOC=0;}
-	if(empty($ENT_SAL)) {$$ENT_SAL=0;}
-	if(empty($ENT_OP)) {$ENT_OP=0;}
-	if(empty($ENT_BUILT)) {$$ENT_BUILT=0;}
-	if(empty($ENT_SAL)){$ENT_SAL=0;}
-	if(empty($AREA_NUM)){$AREA_NUM=0;)
-	if(empty($ROOMS)){$ROOMS=0;}
-	if(empty($BUILT_YEAR)){$BUILT_YEAR=0;}
-	if(empty($LOWSAL)){$LOWSAL=0;}
-	if(empty($HIGHSAL)){$HIGHSAL=0;}
+	
 			     
 			     
 	$com = $json->queryResult->parameters->command;
@@ -52,6 +42,18 @@ if($method == 'POST')
 	$LOWSAL= $json->queryResult->parameters->lowsal;
 	$HIGHSAL= $json->queryResult->parameters->highsal;
 	
+	if (empty($ENT_ROOM)){$ENT_ROOM=0;}
+	if(empty($ENT_LOC)) {$ENT_LOC=0;}
+	if(empty($ENT_SAL)) {$$ENT_SAL=0;}
+	if(empty($ENT_OP)) {$ENT_OP=0;}
+	if(empty($ENT_BUILT)) {$$ENT_BUILT=0;}
+	if(empty($ENT_SAL)){$ENT_SAL=0;}
+	if(empty($AREA_NUM)){$AREA_NUM=0;)
+	if(empty($ROOMS)){$ROOMS=0;}
+	if(empty($BUILT_YEAR)){$BUILT_YEAR=0;}
+	if(empty($LOWSAL)){$LOWSAL=0;}
+	if(empty($HIGHSAL)){$HIGHSAL=0;}
+			     
 	$com = strtolower($com);
 	
 	
