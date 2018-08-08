@@ -126,7 +126,7 @@ if($method == 'POST')
 		//$speech = "houses are available in metro areas $json" ;
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["HOUSE_COUNT"]. " houses available in ".$value["LOCATION"]." area";
+			$speech .= $value["HOUSE_COUNT"]. " houses available in ".$value["METRO3"]." area";
 			$speech .= "\r\n";
 			
 			
