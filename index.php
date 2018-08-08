@@ -33,7 +33,7 @@ if($method == 'POST')
 	
 	
 	
-	if ($com == 'which')
+	if ($com == 'locality')
 	{
 		$room = $json->queryResult->parameters->rooms;
 		$area_num = $json->queryResult->parameters->area_num;
