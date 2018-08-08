@@ -10,10 +10,39 @@ if($method == 'POST')
 	
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-	//$text = $json->queryResult->parameters->text;
-	//$text=strtoupper($text);
+	$ENT_ROOM="";
+	$ENT_LOC="";
+	$ENT_SAL="";
+	$ENT_OP="";
+	$ENT_BUILT="";
+	$ENT_SAL="";
+	$AREA_NUM="";
+	$ROOMS="";
+	$BUILT_YEAR="";
+	$LOWSAL="";
+	$HIGHSAL="";
+	
+	
+	
+	
 	$com = $json->queryResult->parameters->command;
+	$ENT_LOC = $json->queryResult->parameters->ENT_LOC;
+	$ENT_SAL = $json->queryResult->parameters->ENT_SAL;
+	$ENT_OP = $json->queryResult->parameters->ENT_OP;
+	$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
+	$ENT_LOC= $json->queryResult->parameters->ENT_LOC;
+	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
+	$ENT_OP= $json->queryResult->parameters->ENT_OP;
+	$ENT_BUILT= $json->queryResult->parameters->ENT_BUILT;
+	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
+	$AREA_NUM= $json->queryResult->parameters->AREA_NUM;
+	$ROOMS= $json->queryResult->parameters->ROOMS;
+	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;
+	$LOWSAL= $json->queryResult->parameters->LOWSAL;
+	$HIGHSAL= $json->queryResult->parameters->HIGHSAL;
+	
 	$com = strtolower($com);
+	
 	
 	
 	if($com == 'database')
@@ -61,15 +90,18 @@ if($method == 'POST')
 			
        		 }	
 	}
-	else if ($com == 'salary' || $com == 'income')
+	else if ($com == 'getcount')
 	{
-		$lowsal = $json->queryResult->parameters->lowsal;
-		$highsal = $json->queryResult->parameters->highsal;
+		//$lowsal = $json->queryResult->parameters->lowsal;
+		//$highsal = $json->queryResult->parameters->highsal;
 		$com = "gethousesal";
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&totSalLow=$lowsal&totSalHigh=$highsal";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?
+				ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=$ENT_ROOM&ENT_BUILT=$ENT_BUILT&ENT_SAL=$ENT_SAL
+				&COMMAND=$com&AREA_NUM=$AREA_NUM&ROOMS=$ROOMS&BUILT_YEAR=$BUILT_YEAR
+				&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
