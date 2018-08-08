@@ -92,18 +92,15 @@ if($method == 'POST')
 		//$lowsal = $json->queryResult->parameters->lowsal;
 		//$highsal = $json->queryResult->parameters->highsal;
 		$ENT_LOC = $json->queryResult->parameters->ENT_LOC;
-		echo $ENT_LOC;
 		$ENT_SAL = $json->queryResult->parameters->ENT_SAL;
-		echo $ENT_SAL;
 		$ENT_OP = $json->queryResult->parameters->ENT_OP;
-		echo $ENT_OP;
 		$LOWSAL= $json->queryResult->parameters->lowsal;
 		$HIGHSAL= $json->queryResult->parameters->highsal;
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=HOW%20MANY&ENT_LOC=LOCATION&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=EARN&COMMAND=gethousesal&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=15000&HIGHSAL=20015";
-    		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=$ENT_SAL&COMMAND=$com&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
+    		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=$ENT_SAL&COMMAND=$com&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
