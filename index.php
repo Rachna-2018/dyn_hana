@@ -94,7 +94,7 @@ if($method == 'POST')
 	{
 		//$lowsal = $json->queryResult->parameters->lowsal;
 		//$highsal = $json->queryResult->parameters->highsal;
-		$com = "gethousesal";
+		
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
