@@ -90,7 +90,7 @@ if($method == 'POST')
 			
        		 }	
 	}
-	else if ($com == 'getcount')
+	else if ($com == 'gethousesal')
 	{
 		//$lowsal = $json->queryResult->parameters->lowsal;
 		//$highsal = $json->queryResult->parameters->highsal;
