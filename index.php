@@ -37,11 +37,15 @@ if($method == 'POST')
 	{
 		
 		$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
+		echo $ENT_ROOM;
 		$ENT_LOC= $json->queryResult->parameters->ENT_LOC;
+		echo $ENT_LOC;
 		$ENT_OP= $json->queryResult->parameters->ENT_OP;
+		echo $ENT_OP;
 		$ENT_OP= strtoupper($ENT_OP);
+		echo $ENT_OP;
 		$ROOMS= $json->queryResult->parameters->ROOMS;
-
+		echo $ROOMS;
 	
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
