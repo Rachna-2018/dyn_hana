@@ -10,7 +10,7 @@ if($method == 'POST')
 	
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-	$ENT_ROOM="";
+	/*$ENT_ROOM="";
 	$ENT_LOC="";
 	$ENT_SAL="";
 	$ENT_OP="";
@@ -20,7 +20,7 @@ if($method == 'POST')
 	$ROOMS="";
 	$BUILT_YEAR="";
 	$LOWSAL="";
-	$HIGHSAL="";
+	$HIGHSAL="";*/
 	
 	
 	
@@ -39,7 +39,7 @@ if($method == 'POST')
 	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;*/
 	
 	
-	if (empty($ENT_ROOM)){$ENT_ROOM='0';}
+	/*if (empty($ENT_ROOM)){$ENT_ROOM='0';}
 	if(empty($ENT_LOC)) {$ENT_LOC='0';}
 	if(empty($ENT_SAL)) {$$ENT_SAL='0';}
 	if(empty($ENT_OP)) {$ENT_OP='0';}
@@ -49,7 +49,7 @@ if($method == 'POST')
 	if(empty($ROOMS)){$ROOMS=0;}
 	if(empty($BUILT_YEAR)){$BUILT_YEAR=0;}
 	if(empty($LOWSAL)){$LOWSAL=0;}
-	if(empty($HIGHSAL)){$HIGHSAL=0;}
+	if(empty($HIGHSAL)){$HIGHSAL=0;}*/
 			     
 	$com = strtolower($com);
 	
@@ -112,7 +112,7 @@ if($method == 'POST')
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=$ENT_ROOM&ENT_BUILT=$ENT_BUILT&ENT_SAL=$ENT_SAL&COMMAND=$com&AREA_NUM=$AREA_NUM&ROOMS=$ROOMS&BUILT_YEAR=$BUILT_YEAR&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=$ENT_SAL&COMMAND=$com&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
