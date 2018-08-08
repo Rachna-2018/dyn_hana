@@ -10,7 +10,7 @@ if($method == 'POST')
 	
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-	$ENT_ROOM="";
+	/*$ENT_ROOM="";
 	$ENT_LOC="";
 	$ENT_SAL="";
 	$ENT_OP="";
@@ -20,7 +20,7 @@ if($method == 'POST')
 	$ROOMS="";
 	$BUILT_YEAR="";
 	$LOWSAL="";
-	$HIGHSAL="";
+	$HIGHSAL="";*/
 	
 	
 	
