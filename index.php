@@ -27,10 +27,8 @@ if($method == 'POST')
 			     
 			     
 	$com = $json->queryResult->parameters->command;
-	$ENT_LOC = $json->queryResult->parameters->ENT_LOC;
-	$ENT_SAL = $json->queryResult->parameters->ENT_SAL;
-	$ENT_OP = $json->queryResult->parameters->ENT_OP;
-	$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
+	
+	/*$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
 	$ENT_LOC= $json->queryResult->parameters->ENT_LOC;
 	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
 	$ENT_OP= $json->queryResult->parameters->ENT_OP;
@@ -38,9 +36,8 @@ if($method == 'POST')
 	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
 	$AREA_NUM= $json->queryResult->parameters->AREA_NUM;
 	$ROOMS= $json->queryResult->parameters->ROOMS;
-	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;
-	$LOWSAL= $json->queryResult->parameters->lowsal;
-	$HIGHSAL= $json->queryResult->parameters->highsal;
+	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;*/
+	
 	
 	if (empty($ENT_ROOM)){$ENT_ROOM='0';}
 	if(empty($ENT_LOC)) {$ENT_LOC='0';}
@@ -107,7 +104,11 @@ if($method == 'POST')
 	{
 		//$lowsal = $json->queryResult->parameters->lowsal;
 		//$highsal = $json->queryResult->parameters->highsal;
-		
+		$ENT_LOC = $json->queryResult->parameters->ENT_LOC;
+		$ENT_SAL = $json->queryResult->parameters->ENT_SAL;
+		$ENT_OP = $json->queryResult->parameters->ENT_OP;
+		$LOWSAL= $json->queryResult->parameters->lowsal;
+		$HIGHSAL= $json->queryResult->parameters->highsal;
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
