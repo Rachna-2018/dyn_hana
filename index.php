@@ -124,7 +124,7 @@ if($method == 'POST')
 		foreach ($someobj["results"] as $value) 
 		{
 			$speech = $value["AVAILCOUNT"]. " houses are available in ". $loc. " metro area location";
-			$speech .= " built in ". $year . " year having ". " $room ". " bedrooms";
+			$speech .= " built in ". $BUILT_YEAR . " year having ". " $ROOMS ". " bedrooms";
 			
 			
 			
