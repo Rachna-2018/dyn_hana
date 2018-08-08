@@ -37,15 +37,12 @@ if($method == 'POST')
 	{
 		//$room = $json->queryResult->parameters->rooms;
 		//$area_num = $json->queryResult->parameters->area_num;
-		$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
+	$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
 	$ENT_LOC= $json->queryResult->parameters->ENT_LOC;
-	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
 	$ENT_OP= $json->queryResult->parameters->ENT_OP;
-	$ENT_BUILT= $json->queryResult->parameters->ENT_BUILT;
-	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
-	$AREA_NUM= $json->queryResult->parameters->AREA_NUM;
+		$ENT_OP= strtoupper($ENT_OP);
 	$ROOMS= $json->queryResult->parameters->ROOMS;
-	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;*/
+	
 	
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
