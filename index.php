@@ -38,8 +38,8 @@ if($method == 'POST')
 	$AREA_NUM= $json->queryResult->parameters->AREA_NUM;
 	$ROOMS= $json->queryResult->parameters->ROOMS;
 	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;
-	$LOWSAL= $json->queryResult->parameters->LOWSAL;
-	$HIGHSAL= $json->queryResult->parameters->HIGHSAL;
+	$LOWSAL= $json->queryResult->parameters->lowsal;
+	$HIGHSAL= $json->queryResult->parameters->highsal;
 	
 	$com = strtolower($com);
 	
