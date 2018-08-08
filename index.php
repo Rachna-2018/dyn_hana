@@ -35,12 +35,22 @@ if($method == 'POST')
 	
 	if ($com == 'locality')
 	{
-		$room = $json->queryResult->parameters->rooms;
-		$area_num = $json->queryResult->parameters->area_num;
-		
+		//$room = $json->queryResult->parameters->rooms;
+		//$area_num = $json->queryResult->parameters->area_num;
+		$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
+	$ENT_LOC= $json->queryResult->parameters->ENT_LOC;
+	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
+	$ENT_OP= $json->queryResult->parameters->ENT_OP;
+	$ENT_BUILT= $json->queryResult->parameters->ENT_BUILT;
+	$ENT_SAL= $json->queryResult->parameters->ENT_SAL;
+	$AREA_NUM= $json->queryResult->parameters->AREA_NUM;
+	$ROOMS= $json->queryResult->parameters->ROOMS;
+	$BUILT_YEAR= $json->queryResult->parameters->BUILT_YEAR;*/
+	
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=locality&getRooms=$room";
+		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=$ENT_ROOM&ENT_BUILT=0&ENT_SAL=0&COMMAND=locality&AREA_NUM=0&ROOMS=$ROOMS&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0"
+    		//$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=locality&getRooms=$room";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
