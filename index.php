@@ -43,7 +43,7 @@ if($method == 'POST')
 	if(empty($ENT_LOC)) {$ENT_LOC='0';}
 	if(empty($ENT_SAL)) {$$ENT_SAL='0';}
 	if(empty($ENT_OP)) {$ENT_OP='0';}
-	if(empty($ENT_BUILT)) {$$ENT_BUILT='0';}
+	if(empty($ENT_BUILT)) {$ENT_BUILT='0';}
 	if(empty($ENT_SAL)){$ENT_SAL='0';}
 	if(empty($AREA_NUM)){$AREA_NUM=0;)
 	if(empty($ROOMS)){$ROOMS=0;}
