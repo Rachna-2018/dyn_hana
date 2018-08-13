@@ -44,7 +44,9 @@ if($method == 'POST')
 	
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=WHICH&ENT_LOC=LOCATION&ENT_ROOM=BEDROOM&ENT_BUILT=0&ENT_SAL=0&COMMAND=locality&AREA_NUM=0&ROOMS=5&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0";
+		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=WHICH&ENT_LOC=LOCATION&ENT_ROOM=BEDROOM&ENT_BUILT=0&ENT_SAL=0&COMMAND=locality&AREA_NUM=0&ROOMS=5&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0";
+		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP=$ENT_OP&ENT_LOC=$ENT_LOC&ENT_ROOM=$ENT_ROOM&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=$com&AREA_NUM=0&ROOMS=$ROOMS&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0";
+		//http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs??ENT_OP=MANY&ENT_LOC=LOCATION&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=INCOME&COMMAND=gethousesal&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=1000&HIGHSAL=2000
 		
     		//$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=locality&getRooms=$room";
 		$ch      = curl_init( $json_url );
@@ -60,7 +62,7 @@ if($method == 'POST')
 		$speech = "$ROOMS bedroom houses are available in metro areas \n" ;
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["METRO3"];
+			$speech .= $value["LOCATIONS"];
 			$speech .= "\r\n";
 			
 			
