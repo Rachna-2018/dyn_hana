@@ -87,8 +87,8 @@ if($method == 'POST')
 		if($ENT_LOC == "") {$ENT_LOC = 'LOCATION';}
 		if($ENT_OP == "") {$ENT_OP = 'MANY';}
 		if($ENT_SAL =="") {$ENT_SAL = 'INCOME';}
-		//$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
-		//if (in_array($LOWSAL, $userespnose) or in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
+		if (in_array($LOWSAL, $userespnose) or in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
 		//echo in_array($LOWSAL, $userespnose); echo in_array($HIGHSAL, $userespnose);
 		//if (in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
 		$username    = "SANYAM_K";
