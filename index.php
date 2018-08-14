@@ -125,8 +125,8 @@ if($method == 'POST')
 		$ENT_SAL= strtoupper($ENT_SAL);
 		if($ENT_SAL =="") {$ENT_SAL = 'INCOME';}
 		
-		if($LOWSAL == "") {$LOWSAL = 0;}
-		if($HIGHSAL == "") {$HIGHSAL = 0;}
+		if($LOWSAL == "" || $LOWSAL == 'ignore' ) {$LOWSAL = 0; $HIGHSAL = 0;}
+		if($HIGHSAL == "" || $HIGHSAL == 'ignore ) {$HIGHSAL = 0; $LOWSAL = 0;}
 		if($ENT_ROOM == "") {$ENT_ROOM = 'BEDROOM';}
 		if($ENT_LOC == "") {$ENT_LOC = 'LOCATION';}
 		if($ENT_OP == "") {$ENT_OP = 'MANY';}
