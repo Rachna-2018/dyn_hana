@@ -41,7 +41,7 @@ if($method == 'POST')
 		if($ENT_OP == "") {$ENT_OP = '0';}
 		$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
 		if (in_array(strtoupper($ROOMS), $userespnose)) {$ROOMS = 0;}
-		
+		echo $ROOMS;
 	
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
