@@ -36,12 +36,13 @@ if($method == 'POST')
 		$ENT_OP= $json->queryResult->parameters->ENT_OP;
 		$ENT_OP= strtoupper($ENT_OP);
 		$ROOMS= $json->queryResult->parameters->ROOMS;
+		$ROOMS = strtoupper($ROOMS);
 		if($ENT_ROOM == "") {$ENT_ROOM = 'BEDROOM';}
 		if($ENT_LOC == "") {$ENT_LOC = 'LOCATION';}
 		if($ENT_OP == "") {$ENT_OP = '0';}
 		$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
-		if (in_array(strtoupper($ROOMS), $userespnose)) {$ROOMS = 0;}
-		echo $ROOMS;
+		if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
+		//echo $ROOMS;
 	
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
@@ -147,8 +148,8 @@ if($method == 'POST')
 		if (in_array($AREA_NUM, $userespnose)) {$AREA_NUM = 0;}
 		if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
 		if (in_array($BUILT_YEAR, $userespnose)) {$BUILT_YEAR = 0;}
-		if (in_array($LOWSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
-		if (in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		if (in_array(strtoupper($LOWSAL), $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		if (in_array(strtoupper($HIGHSAL), $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
 		
 		//echo $AREA_NUM; echo $ROOMS; echo $BUILT_YEAR;
 		
