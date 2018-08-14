@@ -144,6 +144,8 @@ if($method == 'POST')
 		if (in_array($AREA_NUM, $userespnose)) {$AREA_NUM = 0;}
 		if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
 		if (in_array($BUILT_YEAR, $userespnose)) {$BUILT_YEAR = 0;}
+		if (in_array($LOWSAL, $userespnose)) {$LOWSAL = 0;}
+		if (in_array($HIGHSAL, $userespnose)) {$HIGHSAL = 0;}
 		
 		//echo $AREA_NUM; echo $ROOMS; echo $BUILT_YEAR;
 		
