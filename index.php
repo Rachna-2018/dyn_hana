@@ -87,8 +87,8 @@ if($method == 'POST')
 		if($ENT_OP == "") {$ENT_OP = 'MANY';}
 		if($ENT_SAL =="") {$ENT_SAL = 'INCOME';}
 		$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
-		if (in_array($LOWSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
-		if (in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		if (in_array($LOWSAL, $userespnose) or in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		//if (in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=HOW%20MANY&ENT_LOC=LOCATION&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=EARN&COMMAND=gethousesal&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=15000&HIGHSAL=20015";
@@ -151,10 +151,10 @@ if($method == 'POST')
 		if (in_array($AREA_NUM, $userespnose)) {$AREA_NUM = 0;}
 		if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
 		if (in_array($BUILT_YEAR, $userespnose)) {$BUILT_YEAR = 0;}
-		if (in_array($LOWSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
-		if (in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
-		if($LOWSAL == "") {$LOWSAL = 0; $HIGHSAL = 0;}
-		if($HIGHSAL == "" ) {$HIGHSAL = 0; $LOWSAL = 0;}
+		if (in_array($LOWSAL, $userespnose) or in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		//if (in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
+		if($LOWSAL == "" or $HIGHSAL == "") {$LOWSAL = 0; $HIGHSAL = 0;}
+		//if($HIGHSAL == "" ) {$HIGHSAL = 0; $LOWSAL = 0;}
 		//echo $AREA_NUM; echo $ROOMS; echo $BUILT_YEAR;
 		
 		$username    = "SANYAM_K";
