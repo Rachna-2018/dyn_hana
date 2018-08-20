@@ -24,7 +24,7 @@ if($method == 'POST')
 		if($ENT_OP == "") {$ENT_OP = '0';}
 		$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
 		if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
-		echo $ROOMS;
+		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=WHICH&ENT_LOC=LOCATION&ENT_ROOM=BEDROOM&ENT_BUILT=0&ENT_SAL=0&COMMAND=locality&AREA_NUM=0&ROOMS=5&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0";
