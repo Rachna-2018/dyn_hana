@@ -8,7 +8,39 @@ if($method == 'POST')
 	$json = json_decode($requestBody);
 	$com = $json->queryResult->parameters->command;
 	$com = strtolower($com);
+	
+	if($com == 'closedeal')
+	{
+		$Emailid = $json->queryResult->parameters->Emailid;
+		$rooms = $json->queryResult->parameters->ROOMS;
+		$builtyear = $json->queryResult->parameters->BUILT_YEAR;
+		$name = $json->queryResult->parameters->name;
+		$area_num = $json->queryResult->parameters->AREA_NUM;
 		
+		$username    = "SANYAM_K";
+    		$password    = "Welcome@123";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM=$area_num&ROOMS=$rooms&BUILT_YEAR=$builtyear";
+		$ch      = curl_init( $json_url );
+    		$options = array(
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_USERPWD        => "{$username}:{$password}",
+        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
+    		);
+    		curl_setopt_array( $ch, $options );
+		$json = curl_exec( $ch );
+		$someobj = json_decode($json,true);
+		
+		foreach ($someobj["results"] as $value) 
+		{
+			//$speech .= $value["DEAL_NO"]. "  ".$value["EMAIL"]."  ".$value["CUST_NAME"]. "  ".$value["AREA_NUM"]. "  ".$value["ROOMS"]. "  ".$value["BUILT_YEAR"];
+			//$speech .= "\r\n";
+			$speech = $value["CUST_NAME"].", Your ".$value["ROOMS"]." BHK house has booked with booking id ".$value["DEAL_NO"].
+				$speech .= "\r\n";
+			
+			
+       		}	
+	}	
 	if ($com == 'locality')
 	{
 		$ENT_ROOM= $json->queryResult->parameters->ENT_ROOM;
