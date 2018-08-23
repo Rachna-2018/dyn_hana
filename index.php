@@ -199,33 +199,6 @@ if($method == 'POST')
 			
        		 }
 	}
-	else if($com == 'status')
-	{
-		
-		$com = "tablestatus";
-		$schema = $json->queryResult->parameters->schema;
-		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com&getSchema=$schema";
-		$ch      = curl_init( $json_url );
-    		$options = array(
-        	CURLOPT_SSL_VERIFYPEER => false,
-        	CURLOPT_RETURNTRANSFER => true,
-        	CURLOPT_USERPWD        => "{$username}:{$password}",
-        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
-    		);
-    		curl_setopt_array( $ch, $options );
-		$json = curl_exec( $ch );
-		$someobj = json_decode($json,true);
-		$speech = "STATUS   TABLE NAME   TOTAL_RECORDS   MEMORY_SIZE_MAIN   MEMORY_SIZE_DELTA\n\n" ;
-		foreach ($someobj["results"] as $value) 
-		{
-			$speech .= $value["LOADED"]. "  ".$value["TABLE_NAME"]."  ".$value["RECORD_COUNT"]. "  ".$value["MEMORY_SIZE_IN_MAIN"]. "  ".$value["MEMORY_SIZE_IN_DELTA"];
-			$speech .= "\r\n";
-			
-			
-       		}	
-	}
 	else if($com == 'closedeal')
 	{
 		$Emailid = $json->queryResult->parameters->Emailid;
@@ -236,7 +209,7 @@ if($method == 'POST')
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM=$area_num&ROOMS=$rooms&BUILT_YEAR=$builtyear";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM='$area_num'&ROOMS='$rooms'&BUILT_YEAR='$builtyear'";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
